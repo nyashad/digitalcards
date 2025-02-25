@@ -3,8 +3,7 @@
     "title": "Product Designer/Developer",
     "email": "info@designmania.co.za",
     "website": "www.designmania.co.za",
-    "linkedin": "https://linkedin.com/in/nyasha-ndhlovu",
-    "about": "I still believe Pluto is a planet—because sometimes, redefining the rules leads to better discoveries. As a product developer and designer, I challenge conventions to create solutions that are not only functional but also spark curiosity and connection. I design for the outliers, the dreamers, and the ones who see possibilities where others see limits.",
+    "about": "I still believe Pluto is a planet—because sometimes, redefining the rules leads to better discoveries...",
     "socialLinks": [
         {
             "label": "Email",
@@ -14,5 +13,6 @@
             "label": "LinkedIn",
             "url": "https://linkedin.com/in/nyasha-ndhlovu"
         }
-    ]
+    ],
+    "profilePic": "URL_TO_YOUR_PROFILE_PICTURE.jpg"
 }

@@ -109,10 +109,11 @@ h2 {
 }
 
 .about-section p {
-    font-size: 1em; /* Adjusted "About" paragraph size */
+    font-size: 0.9em; /* Adjusted "About" paragraph size */
     text-align: justify; /* Justify "About" text */
     line-height: 1.5; /* Improved line height for readability */
     color: #FFFFFF; /* Ensure text is white */
+    text-align: center; /* Center "About" text */
 }
 
 

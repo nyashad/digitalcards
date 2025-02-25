@@ -62,10 +62,21 @@ function generateCard(data) {
     // Image Container
     const imageContainer = document.createElement('div');
     imageContainer.className = 'image-container';
-    const placeholderText = document.createElement('span');
-    placeholderText.className = 'image-placeholder-text';
-    placeholderText.innerText = 'Image placeholder';
-    imageContainer.appendChild(placeholderText);
+
+    // Check if profilePic URL exists in the JSON data
+    if (data.profilePic) {
+        const profileImage = document.createElement('img');
+        profileImage.className = 'placeholder'; // You can keep the 'placeholder' class for styling if needed
+        profileImage.src = data.profilePic;
+        profileImage.alt = 'Profile Picture of ' + data.name; // Accessibility alt text
+        imageContainer.appendChild(profileImage);
+    } else {
+        // If profilePic is not available, show the placeholder text
+        const placeholderText = document.createElement('span');
+        placeholderText.className = 'image-placeholder-text';
+        placeholderText.innerText = 'Image placeholder';
+        imageContainer.appendChild(placeholderText);
+    }
 
 
     // Details Section
@@ -93,11 +104,11 @@ function generateCard(data) {
             anchor.textContent = link.label; // Use textContent for button labels
 
              // You can add icons here later, for example:
-             // if (link.label === 'Email') {
-             //     anchor.innerHTML = '<i class="fas fa-envelope"></i> Email'; // Example with FontAwesome
-             // } else if (link.label === 'LinkedIn') {
-             //     anchor.innerHTML = '<i class="fab fa-linkedin"></i> LinkedIn'; // Example with FontAwesome
-             // }
+             if (link.label === 'Email') {
+                 anchor.innerHTML = '<i class="fas fa-envelope"></i> Email'; // Email icon
+             } else if (link.label === 'LinkedIn') {
+                 anchor.innerHTML = '<i class="fab fa-linkedin"></i> LinkedIn'; // LinkedIn icon
+             }
 
             contactLinks.appendChild(anchor);
         }
@@ -114,17 +125,23 @@ function generateCard(data) {
     aboutSection.appendChild(aboutHeading);
     aboutSection.appendChild(aboutText);
 
-    // Social Icons Section (Placeholders as per design image - you can replace with actual icons later)
+    // Social Icons Section (Now with FontAwesome Icons)
     const socialIcons = document.createElement('div');
     socialIcons.className = 'social-icons';
-    const socialPlatforms = ['twitter', 'facebook', 'instagram', 'github']; // Example platforms
+    const socialPlatforms = [
+        { platform: 'twitter', iconClass: 'fab fa-twitter', url: '#' }, // Replace '#' with actual URLs
+        { platform: 'facebook', iconClass: 'fab fa-facebook', url: '#' },
+        { platform: 'instagram', iconClass: 'fab fa-instagram', url: '#' },
+        { platform: 'github', iconClass: 'fab fa-github', url: '#' }
+    ];
+
     socialPlatforms.forEach(platform => {
         const iconLink = document.createElement('a');
-        iconLink.href = '#'; // Replace with actual social links if available in JSON
-        const iconPlaceholder = document.createElement('i'); // Or use <img> for images
-        // You would set classes or src for actual icons here, for example:
-        // iconPlaceholder.className = `fab fa-${platform}`; // If using FontAwesome
-        iconLink.appendChild(iconPlaceholder);
+        iconLink.href = platform.url; // Use the URL from the platform object
+        iconLink.ariaLabel = platform.platform; // Accessibility label
+        const icon = document.createElement('i');
+        icon.className = platform.iconClass; // Use the icon class from the platform object
+        iconLink.appendChild(icon);
         socialIcons.appendChild(iconLink);
     });
 

@@ -1,6 +1,18 @@
 {
     "name": "Diatile Ndhlovu",
-    "email": "diatile@designmania.co.za",
-    "phone": "072 993 8232",
-    "bio": "Creative Manager at Design Mania"
+    "title": "Python Developer",
+    "email": "info@designmania.co.za",
+    "website": "www.designmania.co.za",
+    "about": "I still believe Pluto is a planet—because sometimes, redefining the rules leads to better discoveries...",
+    "socialLinks": [
+        {
+            "label": "Email",
+            "url": "mailto:info@designmania.co.za"
+        },
+        {
+            "label": "LinkedIn",
+            "url": "https://linkedin.com/in/nyasha-ndhlovu"
+        }
+    ],
+    "profilePic": "URL_TO_YOUR_PROFILE_PICTURE.jpg"
 }

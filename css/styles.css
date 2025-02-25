@@ -1,0 +1,160 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1A242F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+#card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #283340;
+    border-radius: 15px; /* Increased border-radius for rounded corners */
+    padding: 25px 30px 30px 30px; /* Adjusted padding to match design */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Slightly stronger shadow */
+    width: 420px; /* Adjusted width to match design */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.image-container {
+    width: 160px; /* Adjusted size */
+    height: 160px; /* Adjusted size */
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px; /* Spacing below image */
+    border: 5px solid #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9; /* Placeholder background color */
+}
+
+.image-placeholder-text {
+    color: #808080; /* Grey color for placeholder text */
+    font-size: 1em;
+    text-align: center;
+}
+
+.details {
+    text-align: center;
+    margin-bottom: 20px; /* Spacing below details */
+}
+
+h1 {
+    font-size: 2em; /* Adjusted font size for name */
+    margin-bottom: 5px; /* Reduced spacing below name */
+    font-weight: bold; /* Make name bold */
+}
+
+h2 {
+    font-size: 1.1em; /* Adjusted font size for title */
+    color: #FFD700;
+    margin-bottom: 15px; /* Spacing below title */
+    font-weight: normal; /* Make title normal weight */
+}
+
+.email {
+    font-size: 1em; /* Adjusted font size for email */
+    margin-bottom: 25px; /* Increased spacing below email */
+    color: #FFFFFF; /* Ensure email is white */
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Adjusted gap between buttons */
+    margin-bottom: 25px; /* Increased spacing below contact links */
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between icon and text */
+    padding: 10px 22px; /* Adjusted padding for buttons */
+    border-radius: 8px; /* Button border-radius */
+    background-color: #FFFFFF; /* White button background */
+    color: #283340; /* Dark text color for buttons */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em; /* Adjusted font size in buttons */
+}
+
+.contact-links a i {
+    /* Style for icons if you add them later using <i> or similar */
+    font-size: 1em; /* Example icon size */
+}
+
+
+.about-section {
+    text-align: left; /* Align "About" text to left */
+    margin-bottom: 25px; /* Spacing below about section */
+    width: 100%; /* Make about section full width of card */
+}
+
+.about-section h3 {
+    font-size: 1.5em; /* Adjusted "About" heading size */
+    color: #FFD700;
+    margin-bottom: 15px; /* Spacing below "About" heading */
+    text-align: center; /* Center "About" heading */
+}
+
+.about-section p {
+    font-size: 1em; /* Adjusted "About" paragraph size */
+    text-align: justify; /* Justify "About" text */
+    line-height: 1.5; /* Improved line height for readability */
+    color: #FFFFFF; /* Ensure text is white */
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the social icons */
+    gap: 20px; /* Adjusted gap between social icons */
+    margin-bottom: 20px; /* Spacing below social icons */
+}
+
+.social-icons a {
+    display: inline-flex; /* Use inline-flex for better control */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Adjusted icon size */
+    height: 40px; /* Adjusted icon size */
+    border-radius: 50%;
+    background-color: #FFD700; /* Gold icon background */
+    text-decoration: none; /* Remove underlines from links */
+}
+
+.social-icons a i, .social-icons a img {
+    /* Style for icons (if using <i> tags or images) */
+    width: 20px; /* Example icon content size */
+    height: 20px; /* Example icon content size */
+    object-fit: contain; /* Ensure icons fit within the circle */
+    color: #283340; /* Example icon color */
+}
+
+
+.website-section {
+    text-align: center;
+    padding-top: 20px; /* Add padding above website text */
+    border-top: 2px solid #FFD700; /* Gold line above website */
+    width: 80%; /* Limit width of the line and website text */
+    margin-left: auto;
+    margin-right: auto; /* Center the line and website text */
+}
+
+.website-section p {
+    font-size: 1em; /* Adjusted website text size */
+    font-weight: bold;
+    color: #FFD700;
+    margin-top: 10px; /* Spacing above website text */
+}

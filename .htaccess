@@ -1,3 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^([a-zA-Z0-9-]+)\.digitalcards\.co\.za$ [NC]
-RewriteRule ^$ /index.html [L]

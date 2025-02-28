@@ -1,19 +1,22 @@
-// js/script.js
+// --- script.js for Digital Business Cards (using query parameters) ---
 
-const path = window.location.pathname;
-const parts = path.split('/');
-const profileName = parts[parts.length - 1]; // Get the last part of the URL
+// Extract Profile Name from Query Parameter (e.g., ?profile=example)
+const urlParams = new URLSearchParams(window.location.search);
+const profileName = urlParams.get('profile'); // Get the 'profile' query parameter
 
-// Check if profileName is empty (root URL)
+console.log("Profile Name (from query parameter):", profileName);
+
+// Check if profileName is available in the URL
 if (profileName) {
-    console.log("Profile Name:", profileName); // Added log
-    const fetchUrl = `/profiles/${profileName}.json`;
+    console.log("Fetching Profile:", profileName);
+    const fetchUrl = `/profiles/${profileName}.json`; // Relative path to profile JSON
+    console.log("Fetch URL:", fetchUrl);
 
     fetch(fetchUrl)
         .then(response => {
             if (!response.ok) {
                 console.error("Fetch failed:", response.status, response.statusText);
-                throw new Error('Profile not found');
+                throw new Error(`Profile not found: ${profileName}`);
             }
             return response.json();
         })
@@ -22,12 +25,12 @@ if (profileName) {
             generateCard(data);
         })
         .catch(error => {
-            console.error(error);
-            document.getElementById('card-container').innerHTML = `<p>${error.message}</p>`;
+            console.error("Fetch Error:", error);
+            document.getElementById('card-container').innerHTML = `<p>Error loading profile: ${error.message}</p>`;
         });
 } else {
-    // Handle root URL (e.g., display a welcome message, a list of profiles, etc.)
-    document.getElementById('card-container').innerHTML = `<p>Welcome! Please select a profile from the URL.</p>`;
+    // Handle case where 'profile' parameter is missing (homepage/root URL)
+    document.getElementById('card-container').innerHTML = `<p>Welcome! Please select a profile by adding <b>?profile=yourProfileName</b> to the URL (e.g., ?profile=example)</p>`;
 }
 
 function generateCard(data) {

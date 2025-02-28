@@ -1,7 +1,7 @@
 {
     "name": "Diatile Ndhlovu",
     "title": "Python Developer",
-    "email": "info@designmania.co.za",
+    "email": "diatile@designmania.co.za",
     "website": "www.designmania.co.za",
     "about": "I still believe Pluto is a planet—because sometimes, redefining the rules leads to better discoveries...",
     "socialLinks": [
@@ -14,5 +14,5 @@
             "url": "https://linkedin.com/in/nyasha-ndhlovu"
         }
     ],
-    "profilePic": "https://nyasha.co.za/wp-content/uploads/2023/05/logo-design.png"
+    "profilePic": "./img/placeholder.png"
 }

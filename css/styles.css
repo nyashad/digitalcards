@@ -31,7 +31,7 @@ body {
 @media screen and (max-width: 500px) {
     .card {
         padding: 20px;
-        width: 70% !important; /* Adjust width for smaller screens */
+    
     }
 }
 

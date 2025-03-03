@@ -1,0 +1,10 @@
+digitalcards
+├── .htaccess
+├── css
+│   └── styles.css
+├── index.html
+├── js
+│   └── script.js
+├── profiles
+│   └── nyasha-ndhlovu.json
+└── README.md

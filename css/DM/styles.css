@@ -142,7 +142,8 @@ h2 {
     text-decoration: none;
 }
 
-.social-icons a i, .social-icons a img {
+.social-icons a i,
+.social-icons a img {
     width: 20px;
     height: 20px;
     object-fit: contain;
@@ -163,4 +164,13 @@ h2 {
     font-weight: bold;
     color: #FFD700;
     margin-top: 10px;
+}
+
+.web-button {
+    padding: 10px 22px;
+    border-radius: 8px;
+    background-color: #FFD700;
+    color: #283340;
+    text-decoration: none;
+    font-weight: bold;
 }

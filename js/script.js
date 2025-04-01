@@ -30,8 +30,8 @@ if (company && profileName) {
                         <p>${profile.about}</p>
                     </div>
                     
-                    <div class="website-section">
-                        <p><a href="${profile.website}" target="_blank">${profile.website}</a></p>
+                   <div>
+                        <button class="web-button" onclick="window.open('${profile.website}', '_blank')">${profile.website}</button>
                     </div>
                 `;
 

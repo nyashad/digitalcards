@@ -1,0 +1,84 @@
+{
+  "cards": [
+    { 
+      "profile" : "nyasha",
+      "name": "Nyasha Ndhlovu",
+      "title": "Product Designer/Developer",
+      "email": "info@designmania.co.za",
+      "website": "www.designmania.co.za",
+      "linkedin": "https://www.linkedin.com/in/nyashadzashe-ndhlovu/",
+      "about": "I still believe Pluto is a planet—because sometimes, redefining the rules leads to better discoveries. As a product developer and designer, I challenge conventions to create solutions that are not only functional but also spark curiosity and connection. I design for the outliers, the dreamers, and the ones who see possibilities where others see limits.",
+      "socialLinks": [
+        {
+          "label": "Email",
+          "url": "mailto:info@designmania.co.za"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/nyashadzashe-ndhlovu/"
+        }
+      ],
+      "profilePic": "img/DM/nyasha.jpg"
+    },
+    { 
+      "profile" : "diatile",
+      "name": "Diatile Ndhlovu",
+      "title": "Co-founder & Product Manager",
+      "email": "diatile@designmania.co.za",
+      "linkedin": "https://www.linkedin.com/in/diatile-ndhlovu-468175139/",
+      "website": "www.designmania.co.za",
+      "about": "I conjure digital symphonies! I'm a tech alchemist, turning raw ideas into dazzling, game-changing solutions. My mission? To not just keep up with the tech revolution, but to throw a wild after-party!",
+      "socialLinks": [
+        {
+          "label": "Email",
+          "url": "mailto:diatile@designmania.co.za"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/nyasha-ndhlovu"
+        }
+      ],
+      "profilePic": "./img/placeholder.png"
+    },
+    { 
+      "profile" : "menelisi",
+      "name": "Menelisi Mvinjelwa",
+      "title": "Design & Marketing Specialist",
+      "email": "menelisi@designmania.co.za",
+      "linkedin": "https://za.linkedin.com/in/menelisi-mvinjelwa",
+      "website": "www.designmania.co.za",
+      "about": "I create. I adapt. I conquer. Every design strategy, every project is a battle against limits. To defy expectations. To create something that lasts. Because in this world, there is no final form—only the next level.",
+      "socialLinks": [
+        {
+          "label": "Email",
+          "url": "mailto:menelisi@designmania.co.za"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://www.linkedin.com/in/menelisi-mvinjelwa/"
+        }
+      ],
+      "profilePic": "./img/menelisi.jpg"
+    },
+    { 
+      "profile" : "octavia",
+      "name": "Octavia",
+      "title": "Campaign Manager",
+      "email": "octavia@designmania.co.za",
+      "website": "www.designmania.co.za",
+      "linkedin": "https://www.linkedin.com/in/nyashadzashe-ndhlovu/",
+      "about": "As a Campaign Manager, I specialize in creating and executing marketing campaigns that drive engagement and growth. My goal is to deliver impactful and measurable results for our clients.",
+      "socialLinks": [
+        {
+          "label": "Email",
+          "url": "mailto:octavia@designmania.co.za"
+        },
+        {
+          "label": "LinkedIn",
+          "url": "https://linkedin.com/in/nyasha-ndhlovu"
+        }
+      ],
+      "profilePic": "./img/octavia.jpg"
+    }
+  ]
+}

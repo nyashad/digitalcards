@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Business Cards</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/DM/styles.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const company = urlParams.get('company');
+        const profileName = urlParams.get('profile');
+
+        if (company) {
+            const companyCss = document.createElement('link');
+            companyCss.rel = 'stylesheet';
+            companyCss.href = `css/${company}/styles.css`; // Ensure this is correct.
+            //This line may not be needed, as we have already included the styles.css in the head.
+            //document.head.appendChild(companyCss);
+        }
+    </script>
 </head>
 <body>
     <div id="card-container"></div>
-    <div class="blob"></div>
     <script src="js/script.js"></script>
 </body>
 </html>

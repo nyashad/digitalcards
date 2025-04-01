@@ -1,115 +1,49 @@
-// --- script.js for Digital Business Cards (using query parameters) ---
+// js/script.js
 
-// Extract Profile Name from Query Parameter (e.g., ?profile=example)
-const urlParams = new URLSearchParams(window.location.search);
-const profileName = urlParams.get('profile'); // Get the 'profile' query parameter
+const container = document.getElementById('card-container');
 
-console.log("Profile Name (from query parameter):", profileName);
-
-// Check if profileName is available in the URL
-if (profileName) {
-    console.log("Fetching Profile:", profileName);
-    const fetchUrl = `/profiles/${profileName}.json`; // Relative path to profile JSON
-    console.log("Fetch URL:", fetchUrl);
-
-    fetch(fetchUrl)
-        .then(response => {
-            if (!response.ok) {
-                console.error("Fetch failed:", response.status, response.statusText);
-                throw new Error(`Profile not found: ${profileName}`);
-            }
-            return response.json();
-        })
+if (company && profileName) {
+    fetch(`profiles/${company}/profiles.json`)
+        .then(response => response.json())
         .then(data => {
-            console.log("Profile data:", data);
-            generateCard(data);
+            const profile = data.cards.find(card => card.profile === profileName);
+
+            if (profile) {
+                const cardElement = document.createElement('div');
+                cardElement.classList.add('card');
+
+                cardElement.innerHTML = `
+                    <div class="image-container">
+                        <img src="${profile.profilePic}" alt="Profile Picture">
+                    </div>
+                    <div class="details">
+                        <h1>${profile.name}</h1>
+                        <h2>${profile.title}</h2>
+                        <p class="email">${profile.email}</p>
+                    </div>
+                    <div class="contact-links">
+                        <a href="${profile.email}" target="_blank">Email</a>
+                        <a href="${profile.linkedin}" target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="about-section">
+                        <h3>About</h3>
+                        <p>${profile.about}</p>
+                    </div>
+                    
+                    <div class="website-section">
+                        <p><a href="${profile.website}" target="_blank">${profile.website}</a></p>
+                    </div>
+                `;
+
+                container.appendChild(cardElement);
+            } else {
+                container.textContent = 'Profile not found.';
+            }
         })
         .catch(error => {
-            console.error("Fetch Error:", error);
-            document.getElementById('card-container').innerHTML = `<p>Error loading profile: ${error.message}</p>`;
+            console.error('Error fetching data:', error);
+            container.textContent = 'Error loading company data.';
         });
 } else {
-    // Handle case where 'profile' parameter is missing (homepage/root URL)
-    document.getElementById('card-container').innerHTML = `<p>Welcome! Please select a profile by adding <b>?profile=yourProfileName</b> to the URL (e.g., ?profile=example)</p>`;
-}
-
-function generateCard(data) {
-    const cardContainer = document.getElementById('card-container');
-    const card = document.createElement('div');
-    card.className = 'card';
-
-    // Image Container
-    const imageContainer = document.createElement('div');
-    imageContainer.className = 'image-container';
-
-    if (data.profilePic) {
-        const profileImage = document.createElement('img');
-        profileImage.className = 'placeholder';
-        profileImage.src = data.profilePic;
-        profileImage.alt = 'Profile Picture of ' + data.name;
-        imageContainer.appendChild(profileImage);
-    } else {
-        const placeholderText = document.createElement('span');
-        placeholderText.className = 'image-placeholder-text';
-        placeholderText.innerText = 'Image placeholder';
-        imageContainer.appendChild(placeholderText);
-    }
-
-    // Details Section
-    const details = document.createElement('div');
-    details.className = 'details';
-    const name = document.createElement('h1');
-    name.innerText = data.name;
-    const title = document.createElement('h2');
-    title.innerText = data.title;
-    const email = document.createElement('p');
-    email.className = 'email';
-    email.innerText = data.email;
-    details.appendChild(name);
-    details.appendChild(title);
-    details.appendChild(email);
-
-    // Contact Links Section
-    const contactLinks = document.createElement('div');
-    contactLinks.className = 'contact-links';
-
-    data.socialLinks.forEach(link => {
-        if (link.label === 'Email' || link.label === 'LinkedIn') {
-            const anchor = document.createElement('a');
-            anchor.href = link.url;
-            anchor.textContent = link.label;
-
-            if (link.label === 'Email') {
-                anchor.innerHTML = '<i class="fas fa-envelope"></i> Email';
-            } else if (link.label === 'LinkedIn') {
-                anchor.innerHTML = '<i class="fab fa-linkedin"></i> LinkedIn';
-            }
-
-            contactLinks.appendChild(anchor);
-        }
-    });
-
-    // About Section
-    const aboutSection = document.createElement('div');
-    aboutSection.className = 'about-section';
-    const aboutHeading = document.createElement('h3');
-    aboutHeading.innerText = 'About';
-    const aboutText = document.createElement('p');
-    aboutText.innerText = data.about;
-    aboutSection.appendChild(aboutHeading);
-    aboutSection.appendChild(aboutText);
-
-    // Website Section
-    const websiteSection = document.createElement('div');
-    websiteSection.className = 'website-section';
-    const websiteText = document.createElement('p');
-    websiteText.innerText = data.website;
-    websiteSection.appendChild(websiteText);
-
-    card.appendChild(imageContainer);
-    card.appendChild(details);
-    card.appendChild(contactLinks);
-    card.appendChild(aboutSection);
-    card.appendChild(websiteSection);
-    cardContainer.appendChild(card);
+    container.textContent = 'Company or profile not specified in the URL.';
 }
